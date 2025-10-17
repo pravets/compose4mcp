@@ -1,0 +1,20 @@
+services:
+  1c_help_mcp:
+    image: comol/1c_help_mcp:latest
+    container_name: 1c_help_mcp
+    ports:
+      - "8003:8003"
+    environment:
+      - USESSE=true
+      - RESET_DATABASE=false
+      - RESET_CACHE=false
+      - 1C_BIN_PATH=/1c_docs
+#      - OPENAI_API_BASE=
+#      - OPENAI_MODEL=
+#      - EMBEDDING_MODEL=
+    env_file: [".env"]
+    volumes:
+      - ./1c_docs:/1c_docs
+      - ./chroma_db:/app/chroma_db
+#      - ./model_cache:/app/model_cache
+    restart: unless-stopped
