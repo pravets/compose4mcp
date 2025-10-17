@@ -1,0 +1,10 @@
+services:
+  1c_syntaxcheck_mcp:
+    image: comol/1c_syntaxcheck_mcp:latest
+    container_name: 1c_syntaxcheck_mcp
+    ports:
+      - "8002:8002"
+    environment:
+      - USESSE=true
+    env_file: [".env"]
+    restart: unless-stopped
