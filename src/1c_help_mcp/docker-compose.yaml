@@ -12,7 +12,7 @@ services:
 #      - OPENAI_API_BASE= # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API, а также укажите токен в .env файле
 #      - OPENAI_MODEL=    # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API
 #      - EMBEDDING_MODEL= 
-    env_file: [".env"]
+    env_file: .env
     volumes:
       - ./1c_docs:/1c_docs
       - ./chroma_db:/app/chroma_db

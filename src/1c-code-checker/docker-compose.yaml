@@ -6,5 +6,5 @@ services:
       - "8007:8007"
     environment:
       - USESSE=true
-    env_file: [".env"]
+    env_file: .env
     restart: unless-stopped

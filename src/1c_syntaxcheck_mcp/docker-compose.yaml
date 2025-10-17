@@ -6,5 +6,5 @@ services:
       - "8002:8002"
     environment:
       - USESSE=true
-    env_file: [".env"]
+    env_file: .env
     restart: unless-stopped
