@@ -10,13 +10,13 @@ services:
       - RESET_CACHE=false
       - CODE_PATH=/app/code
       - METADATA_PATH=/app/metadata
-#      - OPENAI_API_BASE=
-#      - OPENAI_MODEL=
-#      - EMBEDDING_MODEL=
+#      - OPENAI_API_BASE= # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API, а также укажите токен в .env файле
+#      - OPENAI_MODEL=    # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API
+#      - EMBEDDING_MODEL= 
     env_file: [".env"]
     volumes:
       - ./metadata:/app/metadata
       - ./code:/app/code
       - ./chroma_db:/app/chroma_db
-#      - ./model_cache:/app/model_cache
+#      - ./model_cache:/app/model_cache # расскомментируйте, если используется кастомная EMBEDDING_MODEL
     restart: unless-stopped

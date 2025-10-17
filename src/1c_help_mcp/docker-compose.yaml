@@ -9,12 +9,12 @@ services:
       - RESET_DATABASE=false
       - RESET_CACHE=false
       - 1C_BIN_PATH=/1c_docs
-#      - OPENAI_API_BASE=
-#      - OPENAI_MODEL=
-#      - EMBEDDING_MODEL=
+#      - OPENAI_API_BASE= # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API, а также укажите токен в .env файле
+#      - OPENAI_MODEL=    # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API
+#      - EMBEDDING_MODEL= 
     env_file: [".env"]
     volumes:
       - ./1c_docs:/1c_docs
       - ./chroma_db:/app/chroma_db
-#      - ./model_cache:/app/model_cache
+#      - ./model_cache:/app/model_cache # расскомментируйте, если используется кастомная EMBEDDING_MODEL
     restart: unless-stopped
