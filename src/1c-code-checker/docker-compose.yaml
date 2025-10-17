@@ -1,0 +1,10 @@
+services:
+  1c-code-checker:
+    image: comol/1c-code-checker:latest
+    container_name: 1c-code-checker
+    ports:
+      - "8007:8007"
+    environment:
+      - USESSE=true
+    env_file: [".env"]
+    restart: unless-stopped
