@@ -1,0 +1,18 @@
+services:
+  mcp_ssl_server:
+    image: comol/mcp_ssl_server:latest
+    container_name: mcp_ssl_server
+    ports:
+      - "8008:8008"
+    environment:
+      - USESSE=true
+      - RESET_DATABASE=false
+      - RESET_CACHE=false
+#      - OPENAI_API_BASE= # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API, а также укажите токен в .env файле
+#      - OPENAI_MODEL=    # расскомментируйте и задайте, если требуется использование OpenAI-совместимого API
+#      - EMBEDDING_MODEL= 
+    env_file: [".env"]
+    volumes:
+      - ./chroma_db:/app/chroma_db
+#      - ./model_cache:/app/model_cache # расскомментируйте, если используется кастомная EMBEDDING_MODEL
+    restart: unless-stopped
