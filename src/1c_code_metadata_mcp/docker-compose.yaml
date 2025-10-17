@@ -1,0 +1,22 @@
+services:
+  1c_code_metadata_mcp:
+    image: comol/1c_code_metadata_mcp:latest
+    container_name: 1c_code_metadata_mcp
+    ports:
+      - "8000:8000"
+    environment:
+      - USESSE=true
+      - RESET_DATABASE=false
+      - RESET_CACHE=false
+      - CODE_PATH=/app/code
+      - METADATA_PATH=/app/metadata
+#      - OPENAI_API_BASE=
+#      - OPENAI_MODEL=
+#      - EMBEDDING_MODEL=
+    env_file: [".env"]
+    volumes:
+      - ./metadata:/app/metadata
+      - ./code:/app/code
+      - ./chroma_db:/app/chroma_db
+#      - ./model_cache:/app/model_cache
+    restart: unless-stopped
