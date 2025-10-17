@@ -1,5 +1,8 @@
 # compose4mcp
 
+![License](https://img.shields.io/github/license/pravets/oscript-images)
+[![Telegram](https://telegram-badge.vercel.app/api/telegram-badge?channelId=@pravets_IT)](https://t.me/+GKGRmAwghxllYzIy)
+
 Репозиторий с конфигами для оркестрации MCP-серверов с помощью Docker Compose
 
 ## Что находится в `src/`
